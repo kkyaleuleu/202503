@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LOVEME OFFICIAL SITE</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+    <!-- メニュー -->
+    <div class="header">
+        <div style="text-align:center">
+            <a href="index.html" class="anchor_link">
+                <img src="mainpic/LOVEME_logo.jpg" height="90" alt="ロゴ">
+            </a>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav>
+                <ul>
+                    <li><a href="news.html" class="anchor_link">NEWS</a></li>
+                    <li><a href="profile.html" class="anchor_link">PROFILE</a></li>
+                    <li><a href="#" class="anchor_link">DISCOGRAPHY</a></li>
+                    <li><a href="#" class="anchor_link">SCHEDULE</a></li>
+                    <li><a href="#" class="anchor_link">SHOP</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+        <!-- オーバーレイ画僧 -->
+    <div class="main">
+        <div style="text-align:center">
+            <div class="slideshow-container">
+    <div class="slide fade">
+        <img src="mainpic/ALL.JPG" alt="Slide 1" class="all-jpg">
+    </div>
+    <div class="slide fade">
+        <img src="mainpic/main_natsumi.JPG" alt="Slide 2">
+    </div>
+    <div class="slide fade">
+        <img src="mainpic/main_ami.JPG" alt="Slide 3">
+    </div>
+    <div class="slide fade">
+        <img src="mainpic/main_chiho.JPG" alt="Slide 4">
+    </div>
+    <div class="slide fade">
+        <img src="mainpic/main_karen.JPG" alt="Slide 5">
+    </div>
+    <div class="slide fade">
+        <img src="mainpic/main_kana.JPG" alt="Slide 6">
+    </div>
+    <div class="slide fade">
+        <img src="mainpic/main_rui.JPG" alt="Slide 7">
+    </div>
+</div>
+        <!-- ファンクラブバナー（左中央） -->
+    <div class="fixed-image">
+        <a href="login.html">
+        <img src="mainpic/fanclub_banner.jpg" alt="ファンクラブバナー" class="fanclub-banner">
+        </a>
+    </div>
+
+        <!-- ニュース一覧 -->
+    <script src="login.js"></script>
+            <a id="news"></a>
+            <h2 class="news_ttl">NEWS</h2>
+            <ul id="latest-news" class="news-list"></ul>
+
+            <a href="news.html" class="more-news">VIEW MORE >> </a>
+
+            <section class="video">
+    <h2 class="sub_ttl2">MUSIC VIDEO</h2>
+    <div class="video-slider">
+        <!-- スライドショー用の動画コンテナ -->
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/e5Z73z9E6S0?si=55DdtrRVHj9jU9CN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gf3eFgYf2K8?si=w3C-9KgJZ8q72CpJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hzGiU8LWBbY?si=WMh0B1cQ90vEmIHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- 前の動画への矢印 -->
+        <button class="prev">&#10094;</button>
+        <!-- 次の動画への矢印 -->
+        <button class="next">&#10095;</button>
+    </div>
+</section>
+
+            <!-- <section class="fanclub">
+                <h2 class="sub_ttl3">FAN CLUB</h2>
+                <h3><span class="none">LOVEME OFFICIAL FANCLUB</span></h3>
+                <nav>
+                </nav>
+            </section>-->
+
+        </div>
+
+        <div class="footer">
+            <div style="text-align:center">
+                <footer>
+                    <p></p> 
+                    <!-- フッターです -->
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript はここにまとめる -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log("ページ読み込み完了！");
+        
+        let moreNews = document.querySelector('.more-news');
+        console.log("more-newsの要素:", moreNews);
+
+        // ニュースを取得する処理
+        fetch('news.html')
+            .then(response => response.text())
+            .then(html => {
+                let parser = new DOMParser();
+                let doc = parser.parseFromString(html, 'text/html');
+                let newsItems = doc.querySelectorAll('.news-list .item');
+
+                let latestNews = document.getElementById('latest-news');
+                for (let i = 0; i < Math.min(3, newsItems.length); i++) {
+                    latestNews.appendChild(newsItems[i].cloneNode(true));
+                }
+
+                // 「view more」が消えてたら追加し直す
+                setTimeout(() => {
+                    let moreNews = document.querySelector('.more-news');
+                    if (!moreNews) {
+                        console.log('「view more」が消えてるので復活させる！');
+
+                        let newLink = document.createElement('a');
+                        newLink.href = 'news.html';
+                        newLink.className = 'more-news';
+                        newLink.textContent = 'view more >>';
+
+                        latestNews.insertAdjacentElement('afterend', newLink);
+                    } else {
+                        console.log('「view more」はちゃんとある！');
+                    }
+                }, 500);
+            })
+            .catch(error => console.error('ニュースを取得できませんでした:', error));
+
+        // ===== オーバーレイ画像のスライドショー処理 =====
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".slide");
+            slides.forEach(slide => slide.style.display = "none");
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 4000); // 4秒ごとに切り替え
+        }
+
+        showSlides(); // 初回実行
+    });
+
+// ===== 動画のスライドショーの処理 =====
+document.addEventListener('DOMContentLoaded', () => {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.video-container');
+    const totalSlides = slides.length;
+
+    // 最初のスライドを表示
+    showSlide(currentSlide);
+
+    // 前のスライドを表示
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentSlide = (currentSlide === 0) ? totalSlides - 1 : currentSlide - 1;
+        showSlide(currentSlide);
+    });
+
+    // 次のスライドを表示
+    document.querySelector('.next').addEventListener('click', () => {
+        currentSlide = (currentSlide === totalSlides - 1) ? 0 : currentSlide + 1;
+        showSlide(currentSlide);
+    });
+
+    // スライドを表示する関数
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    if (i === index) {
+      slide.style.opacity = 1;
+      slide.style.visibility = 'visible';
+    } else {
+      slide.style.opacity = 0;
+      slide.style.visibility = 'hidden';
+    }
+  });
+}
+
+});
+
+
+    </script>
+
+</body>
+</html>

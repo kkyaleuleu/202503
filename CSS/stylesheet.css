@@ -1,0 +1,310 @@
+/* メインページのCSS */
+/* ロゴ */
+.header img {
+    width: auto;  /* 幅を元のサイズに */
+    height: 90px; /* 高さを90pxに固定 */
+}
+
+/* メニュー項目 */
+nav ul {
+  text-align: center;
+  padding: 0;
+  list-style: none;/* liタグの箇条書きの点を消す */
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 10px;
+  border-bottom: 10px solid transparent;/* 通常時の透明なボーダー ※文字が動くのを防ぐため */
+}
+
+nav a {
+  text-decoration: none;/* リンクの架線を消す */
+  color: #333;
+  font-weight: bold; /* フォントを太字にする */
+  font-family: serif;
+}
+
+nav li:hover { 
+  border-bottom: 3px solid #FF3399;/* ホバー時のテキストの色を指定 */
+}
+
+/* ハンバーガーメニュー */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* チェックボックスのスタイルを隠す */
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: row; /* 横並びのままにする */
+    justify-content: center; /* 中央揃えを維持 */
+    width: 100%;
+    text-align: center;
+  }
+
+  #menu-toggle:checked + .hamburger-menu + nav ul {
+    display: flex;
+  }
+}
+
+/* オーバーレイ画像のスライドショー */
+.slideshow-container {
+    position: relative;
+    width: 100vw; /* 画面の横幅いっぱい */
+    max-width: 100%; /* 念のため */
+    height: 88vh; /* が〜〜〜〜〜〜〜〜〜〜〜〜〜 */
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #FFDCE5; /* 余白部分を薄ピンクに */
+}
+
+/* すべてのスライド画像 */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* デフォルトでトリミング */
+    display: block;
+}
+
+/* フェードアニメーション */
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* ファンクラブのバナー */
+.fanclub-banner {
+    position: fixed;  /* 画面に固定 */
+    left: 0px;  /* 画面左端からの距離 */
+    top: 50%;  /* 画面中央 */
+    transform: translateY(-50%);  /* ちょうど中央に配置 */
+    z-index: 1000;  /* 他の要素より手前に表示 */
+    opacity: 0.8;  /* 初期状態をやや透明に */
+    transition: opacity 0.3s ease-in-out; /* なめらかに変化 */
+    
+    /* 画像のサイズが崩れないように制限 */
+    max-width: 100px;  /* 必要に応じて調整 */
+    height: auto;  /* 縦横比を維持 */
+}
+
+.fanclub-banner:hover {
+    opacity: 1; /* カーソルを当てたら元の濃さに */
+}
+
+/* NEWSタイトル */
+.news_ttl {
+  color: #333;
+  font-weight: bold;
+  font-size: 32px;
+  font-family: serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* NEWSリスト */
+.news-list {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.news-list .item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #CCC;
+  padding: 15px 0;
+}
+
+/* 各要素のスタイル */
+.news-list .item .date {
+  font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 120px;
+  color: #333;
+  padding-right: 20px;
+  font-family: serif;
+}
+
+.news-list .item {
+  display: flex;
+  flex-wrap: wrap; /* ラベルが横並びにならないように */
+  gap: 10px; /* ラベル間の隙間を指定 */
+}
+
+.news-list .item .category {
+  display: flex; /* 新しい要素を横並びに */
+  gap: 5px; /* NEWとカテゴリ間に隙間 */
+}
+
+.news-list .item .category .category-name {
+  background-color: dimgrey; /* INFO や FANCLUB の背景色 */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 3px 6px;
+  display: inline-block; /* これで背景反映される */
+  font-family: sans-serif; 
+}
+
+.news-list .item .category .new {
+  background-color: deeppink; /* NEW の背景色 */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 3px 6px;
+  font-family: sans-serif; 
+}
+
+.news-list .item a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #333;
+}
+
+.news-list .item a:hover {
+  color: #00F;
+}
+
+/* 「view more」ボタン */
+.more-news {
+  display: block;
+  text-align: right;
+  font-weight: bold;
+  color: #333;
+  margin: 20px auto;
+  width: 80%;
+  font-family: serif;
+}
+
+.more-news:hover {
+  color: #00F;
+}
+
+/* MUSIC VIDEO一覧 */
+.sub_ttl2 {
+  color: #333;
+  font-weight: bold;
+  font-size: 32px;
+  font-family: serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 動画スライダーのスタイル */
+.video-slider {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* 動画コンテナ */
+.video-container {
+  position: relative;
+  width: 33%; /* 3つの動画を横に並べる */
+  height: 400px;
+  background-size: cover; /* 背景画像が拡大・縮小されずにフィット */
+  background-position: center; /* 背景画像を中央に */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* iframeのスタイル */
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* 動画がコンテナの大きさに合わせてフィット */
+}
+
+/* スライダーのボタン */
+.video-slider .prev,
+.video-slider .next {
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景 */
+  color: white;
+  font-size: 30px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.video-slider .prev {
+  left: 10px;
+}
+
+.video-slider .next {
+  right: 10px;
+}
+
+/* ボタンにホバー時のエフェクト */
+.video-slider .prev:hover,
+.video-slider .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* FAN CLUB */
+.fan_club_ttl {
+  color: #333;
+  font-weight: bold;
+  font-size: 32px;
+  font-family: serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.none {
+  color: #333;
+  font-weight: bold; /* フォントを太字にする */
+  font-style: oblique;
+  font-family: serif;
+}
+
+.sub_ttl3 {
+  color: #333;
+  font-weight: bold;
+  font-size: 32px;
+  font-family: serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
