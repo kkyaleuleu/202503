@@ -6,66 +6,134 @@
 }
 
 /* メニュー項目 */
-nav ul {
+.main-nav ul {
   text-align: center;
   padding: 0;
-  list-style: none;/* liタグの箇条書きの点を消す */
+  list-style: none; /* liタグの箇条書きの点を消す */
 }
 
-nav li {
+.main-nav li {
   display: inline-block;
   margin: 0 10px;
-  border-bottom: 10px solid transparent;/* 通常時の透明なボーダー ※文字が動くのを防ぐため */
+  border-bottom: 10px solid transparent; /* 通常時の透明なボーダー ※文字が動くのを防ぐため */
 }
 
-nav a {
-  text-decoration: none;/* リンクの架線を消す */
+.main-nav a {
+  text-decoration: none; /* リンクの下線を消す */
+  font-size: 16px;
   color: #333;
-  font-weight: bold; /* フォントを太字にする */
+  font-weight: bold; 
   font-family: serif;
 }
 
-nav li:hover { 
-  border-bottom: 3px solid #FF3399;/* ホバー時のテキストの色を指定 */
+.main-nav li:hover { 
+  border-bottom: 3px solid #FF3399; /* ホバー時のボーダーの色を指定 */
 }
 
 /* ハンバーガーメニュー */
 .hamburger-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 11000;
 }
 
 .hamburger-menu span {
   width: 100%;
-  height: 3px;
-  background-color: #333;
+  height: 4px;
+  background-color: #333; /* 黒色 */
   border-radius: 2px;
+  transition: all 0.3s ease-in-out;
 }
 
-/* チェックボックスのスタイルを隠す */
+/* ハンバーガーアイコンのアニメーション */
+#menu-toggle:checked + .hamburger-menu span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+
+#menu-toggle:checked + .hamburger-menu span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + .hamburger-menu span:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* メニュー背景（オーバーレイ） */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 10000;
+}
+
+/* メニューの中身 */
+.menu-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+/* ハンバーガーメニュー内のリストの点を消す */
+.hum-nav ul {
+  list-style: none !important; /* 確実に適用 */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.hum-nav li {
+  margin: 15px 0;
+}
+
+.hum-nav a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  font-family: serif;
+  transition: color 0.3s ease-in-out;
+}
+
+.hum-nav a:hover {
+  color: #FF3399;
+}
+
+/* ✕ボタン */
+.close-menu {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* チェックボックスを非表示 */
 #menu-toggle {
   display: none;
 }
 
-@media (max-width: 768px) {
-  nav ul {
-    display: flex;
-    flex-direction: row; /* 横並びのままにする */
-    justify-content: center; /* 中央揃えを維持 */
-    width: 100%;
-    text-align: center;
-  }
-
-  #menu-toggle:checked + .hamburger-menu + nav ul {
-    display: flex;
-  }
+/* メニューが開いた時のスタイル */
+#menu-toggle:checked ~ .menu-overlay {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* オーバーレイ画像のスライドショー */
@@ -82,7 +150,7 @@ nav li:hover {
 /* すべてのスライド画像 */
 .slide img {
     width: 100%;
-    height: 100%;
+    min-height: 88vh;
     object-fit: cover; /* デフォルトでトリミング */
     display: block;
 }
@@ -128,17 +196,24 @@ nav li:hover {
 
 /* NEWSリスト */
 .news-list {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding: 10px 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* アイテム全体を中央に */
 }
 
 .news-list .item {
+  width: 80%; /* 全体の幅を調整（お好みで変更可） */
+  max-width: 1000px; /* 必要なら最大幅を設定 */
   display: flex;
   align-items: center;
   border-bottom: 1px solid #CCC;
   padding: 15px 0;
+  text-align: left; /* 文字は左寄せ */
+  white-space: nowrap; /* 改行させない */
 }
 
 /* 各要素のスタイル */
@@ -220,66 +295,63 @@ nav li:hover {
 }
 
 /* 動画スライダーのスタイル */
-.video-slider {
+.video-slider-wrapper {
   position: relative;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-/* 動画コンテナ */
-.video-container {
-  position: relative;
-  width: 33%; /* 3つの動画を横に並べる */
-  height: 400px;
-  background-size: cover; /* 背景画像が拡大・縮小されずにフィット */
-  background-position: center; /* 背景画像を中央に */
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-/* iframeのスタイル */
+.video-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.video-container {
+  min-width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 10px;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
 .video-container iframe {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  object-fit: cover; /* 動画がコンテナの大きさに合わせてフィット */
+  object-fit: contain; /* 切り取りなし */
 }
 
-/* スライダーのボタン */
-.video-slider .prev,
-.video-slider .next {
-  position: absolute;
-  top: 50%;
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景 */
+/* ボタン */
+.prev, .next {
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 30px;
   border: none;
   padding: 10px;
   cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
   transform: translateY(-50%);
+  z-index: 10;
 }
 
-.video-slider .prev {
+.prev {
   left: 10px;
 }
 
-.video-slider .next {
+.next {
   right: 10px;
 }
 
-/* ボタンにホバー時のエフェクト */
-.video-slider .prev:hover,
-.video-slider .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
-
 
 /* FAN CLUB */
 .fan_club_ttl {
@@ -293,7 +365,7 @@ nav li:hover {
 
 .none {
   color: #333;
-  font-weight: bold; /* フォントを太字にする */
+  font-weight: bold;
   font-style: oblique;
   font-family: serif;
 }
@@ -306,5 +378,65 @@ nav li:hover {
   text-align: center;
   margin-bottom: 30px;
 }
+
+.footer {
+  margin-top: 100px; /* 上に50pxのスペースを作る */
+}
+
+/* SNSメニューたち */
+.sns-nav ul {
+  text-align: center;
+  padding: 0;
+  list-style: none; /* liタグの箇条書きの点を消す */
+}
+
+.sns-nav li {
+  display: inline-block;
+  margin: 0 10px;
+  border-bottom: 10px solid transparent; /* 通常時の透明なボーダー ※文字が動くのを防ぐため */
+}
+
+.sns-nav a {
+  text-decoration: none; /* リンクの下線を消す */
+  color: #333;
+  font-family: serif;
+}
+
+.sns-nav li:hover { 
+  border-bottom: 3px solid #FF3399; /* ホバー時のボーダーの色を指定 */
+}
+/* 下部メニューたち */
+.another-nav ul {
+  text-align: center;
+  padding: 0;
+  list-style: none; /* liタグの箇条書きの点を消す */
+}
+
+.another-nav li {
+  display: inline-block;
+  margin: 0 10px;
+  border-bottom: 10px solid transparent; /* 通常時の透明なボーダー ※文字が動くのを防ぐため */
+}
+
+.another-nav a {
+  text-decoration: none; /* リンクの下線を消す */
+  ont-size: 13px;
+  color: #333;
+  font-family: serif;
+}
+
+.another-nav li:hover { 
+  border-bottom: 3px solid #999; /* ホバー時のボーダーの色を指定 */
+}
+
+/* 著作権のやつ*/
+.copyright {
+  font-family: "Arial", sans-serif; 
+  font-size: 13px; 
+  color: #999; 
+  text-align: center;
+  margin-top: 20px;
+}
+
 
 

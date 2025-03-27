@@ -5,33 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LOVEME OFFICIAL SITE</title>
     <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel = "shortcut icon" href="images/favicon.ico">
+    <style>
+  ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+     }
+    </style>
 </head>
 
 <body>
-    <!-- メニュー -->
-    <div class="header">
-        <div style="text-align:center">
-            <a href="index.html" class="anchor_link">
-                <img src="mainpic/LOVEME_logo.jpg" height="90" alt="ロゴ">
-            </a>
-            <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <nav>
+<!-- メニュー -->
+<div class="header">
+    <div style="text-align:center">
+        <a href="index.html" class="anchor_link">
+            <img src="mainpic/LOVEME_logo.jpg" height="90" alt="ロゴ">
+        </a>
+
+<!-- チェックボックス（非表示） -->
+<input type="checkbox" id="menu-toggle">
+
+<!-- ハンバーガーメニューアイコン -->
+<label for="menu-toggle" class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+<!-- メニューと背景のオーバーレイ -->
+<div class="menu-overlay">
+    <nav class="menu-content">
+        <!-- ✕ボタン -->
+        <label for="menu-toggle" class="close-menu">✕</label>
+        <ul class="hum-nav">
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="profile.html">PROFILE</a></li>
+            <li><a href="#">DISCOGRAPHY</a></li>
+            <li><a href="#">SCHEDULE</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+        </ul>
+    </nav>
+</div>
+
+        <!-- メニューバー -->
+            <nav class="main-nav">
                 <ul>
                     <li><a href="news.html" class="anchor_link">NEWS</a></li>
                     <li><a href="profile.html" class="anchor_link">PROFILE</a></li>
                     <li><a href="#" class="anchor_link">DISCOGRAPHY</a></li>
                     <li><a href="#" class="anchor_link">SCHEDULE</a></li>
-                    <li><a href="#" class="anchor_link">SHOP</a></li>
+                    <li><a href="shop.html" class="anchor_link">SHOP</a></li>
                 </ul>
             </nav>
         </div>
     </div>
-        <!-- オーバーレイ画僧 -->
+
+        <!-- オーバーレイ画像 -->
     <div class="main">
         <div style="text-align:center">
             <div class="slideshow-container">
@@ -64,7 +94,7 @@
         </a>
     </div>
 
-        <!-- ニュース一覧 -->
+<!-- ニュース一覧 -->
     <script src="login.js"></script>
             <a id="news"></a>
             <h2 class="news_ttl">NEWS</h2>
@@ -72,55 +102,64 @@
 
             <a href="news.html" class="more-news">VIEW MORE >> </a>
 
-            <section class="video">
+<!-- 動画 -->
+<section class="video">
     <h2 class="sub_ttl2">MUSIC VIDEO</h2>
-    <div class="video-slider">
-        <!-- スライドショー用の動画コンテナ -->
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/e5Z73z9E6S0?si=55DdtrRVHj9jU9CN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/gf3eFgYf2K8?si=w3C-9KgJZ8q72CpJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/hzGiU8LWBbY?si=WMh0B1cQ90vEmIHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-
-        <!-- 前の動画への矢印 -->
+    <div class="video-slider-wrapper">
         <button class="prev">&#10094;</button>
-        <!-- 次の動画への矢印 -->
+        <div class="video-slider">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/e5Z73z9E6S0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/gf3eFgYf2K8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/hzGiU8LWBbY" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
         <button class="next">&#10095;</button>
     </div>
 </section>
 
-            <!-- <section class="fanclub">
-                <h2 class="sub_ttl3">FAN CLUB</h2>
-                <h3><span class="none">LOVEME OFFICIAL FANCLUB</span></h3>
-                <nav>
-                </nav>
-            </section>-->
-
-        </div>
-
+      <footer>
         <div class="footer">
-            <div style="text-align:center">
-                <footer>
-                    <p></p> 
-                    <!-- フッターです -->
-                </footer>
-            </div>
+        <div style="text-align:center">
+            <a href="index.html" class="anchor_link">
+                <img src="mainpic/LOVEME_logo.jpg" height="90" alt="ロゴ">
+            </a>
         </div>
-    </div>
+        </div>
+        <nav class="sns-nav">
+                <ul>
+                    <li><a href="https://x.com/LOVEME_idol"><img src="mainpic/logo-black.png" height="30" alt="X"></a></li>
+                    <li><a href="#"><img src="mainpic/Instagram_Glyph_Black.png" height="30" alt="Instagram"></a></li>
+                    <li><a href="https://youtube.com/@loveme-sx4il?si=_6kouY-TEkoKa0Qe"><img src="mainpic/youtube_social_icon_dark.png" height="30" alt="youtube"></a></li>
+                </ul>
+        </nav>
+        <nav class="another-nav">
+                <ul>
+                    <li><a href="#" class="anchor_link">FAQ</a></li>
+                    <li><a href="# class="anchor_link">会員規約</a></li>
+                    <li><a href="#" class="anchor_link">プライバシーポリシー</a></li>
+                    <li><a href="#" class="anchor_link">特定商取引法</a></li>
+                </ul>
+        </nav>
+        <p class="copyright">&copy; Copyright LOVEME. All Rights Reserved</p>
+
+       </footer>
 
     <!-- JavaScript はここにまとめる -->
     <script>
+
+// ニュース
     document.addEventListener('DOMContentLoaded', () => {
         console.log("ページ読み込み完了！");
         
         let moreNews = document.querySelector('.more-news');
         console.log("more-newsの要素:", moreNews);
 
-        // ニュースを取得する処理
+// ニュースを取得する処理
         fetch('news.html')
             .then(response => response.text())
             .then(html => {
@@ -169,40 +208,43 @@
         showSlides(); // 初回実行
     });
 
-// ===== 動画のスライドショーの処理 =====
+// ===== Music videoのスライドショー処理 =====
 document.addEventListener('DOMContentLoaded', () => {
-    let currentSlide = 0;
+    const slider = document.querySelector('.video-slider');
     const slides = document.querySelectorAll('.video-container');
     const totalSlides = slides.length;
+    let currentIndex = 0;  // 初期表示は「3→1→2」の順番
 
-    // 最初のスライドを表示
-    showSlide(currentSlide);
-
-    // 前のスライドを表示
-    document.querySelector('.prev').addEventListener('click', () => {
-        currentSlide = (currentSlide === 0) ? totalSlides - 1 : currentSlide - 1;
-        showSlide(currentSlide);
-    });
-
-    // 次のスライドを表示
-    document.querySelector('.next').addEventListener('click', () => {
-        currentSlide = (currentSlide === totalSlides - 1) ? 0 : currentSlide + 1;
-        showSlide(currentSlide);
-    });
-
-    // スライドを表示する関数
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    if (i === index) {
-      slide.style.opacity = 1;
-      slide.style.visibility = 'visible';
-    } else {
-      slide.style.opacity = 0;
-      slide.style.visibility = 'hidden';
+    // 最初の表示順を設定
+    function setInitialOrder() {
+        const initialOrder = [2, 0, 1];  // 最初の表示順: 3→1→2
+        for (let i = 0; i < totalSlides; i++) {
+            slides[i].style.order = initialOrder[i];
+        }
     }
-  });
-}
 
+    // 初期位置を設定
+    setInitialOrder();
+
+    // スライドの配置を設定
+    function updateSlide() {
+        const initialOrder = [2, 0, 1];  // 右矢印、左矢印の動作に合わせて順番を変更
+        for (let i = 0; i < totalSlides; i++) {
+            slides[i].style.order = initialOrder[(i + currentIndex) % totalSlides];
+        }
+    }
+
+    // 前の動画へスライド（左矢印）
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1; // 左矢印で逆方向
+        updateSlide();
+    });
+
+    // 次の動画へスライド（右矢印）
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1; // 右矢印で順方向
+        updateSlide();
+    });
 });
 
 

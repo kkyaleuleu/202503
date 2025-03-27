@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PROFILE</title>
     <link rel="stylesheet" href="css/stylesheet_profile.css">
+        <link rel = "shortcut icon" href="images/favicon.ico">
+    <style>
+  ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+     }
+    </style>
   </head>
 
   <body>
@@ -12,72 +20,116 @@
       <div style="text-align:center">
       <div style="text-align:center">
        <a href="index.html" class="anchor_link"><img src="mainpic/LOVEME_logo.jpg" height="90" alt="ロゴ"></a>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="hamburger-menu">
-         <span></span>
-         <span></span>
-         <span></span>
-        </label>
-    <nav>
+
+    <!-- チェックボックス（非表示） -->
+<input type="checkbox" id="menu-toggle">
+
+<!-- ハンバーガーメニューアイコン -->
+<label for="menu-toggle" class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+<!-- メニューと背景のオーバーレイ -->
+<div class="menu-overlay">
+    <nav class="menu-content">
+        <!-- ✕ボタン -->
+        <label for="menu-toggle" class="close-menu">✕</label>
+        <ul class="hum-nav">
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="profile.html">PROFILE</a></li>
+            <li><a href="#">DISCOGRAPHY</a></li>
+            <li><a href="#">SCHEDULE</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+        </ul>
+    </nav>
+</div>
+
+    <nav class="main-nav">
           <ul>
-            <li><a href="index.html#news" class="anchor_link">NEWS</a></li>
+            <li><a href="news.html" class="anchor_link">NEWS</a></li>
             <li><a href="#" class="anchor_link">PROFILE</a></li>
             <li><a href="#" class="anchor_link">DISCOGRAPHY</a></li>
             <li><a href="#" class="anchor_link">SCHEDULE</a></li>
-            <li><a href="#" class="anchor_link">SHOP</a></li>
+            <li><a href="shop.html" class="anchor_link">SHOP</a></li>
           </ul>
-        </nav>
-    </nav>
+     </nav>
     </div>
     </div>
 
-    <div class="main">
+<!-- プロフィール画像 -->
+<div class="main">
   <div style="text-align:center">
     <h2 class="sub_ttl">PROFILE</h2>
-    <nav2>
-      <ul>
-        <li><a href="#popup1"><img src="profilepic/profile_rui.JPG" height="400" alt="Rui"></a></li>
-        <li><a href="#popup2"><img src="profilepic/profile_ami.JPG" height="400" alt="Ami"></a></li>
-        <li><a href="#popup3"><img src="profilepic/profile_kana.JPG" height="400" alt="Kana"></a></li>
-        <li><a href="#popup4"><img src="profilepic/profile_natsumi.JPG" height="400" alt="Natsumi"></a></li>
-        <li><a href="#popup5"><img src="profilepic/profile_karen.JPG" height="400" alt="Karen"></a></li>
-        <li><a href="#popup6"><img src="profilepic/profile_chiho.JPG" height="400" alt="Chiho"></a></li>
-      </ul>
-    </nav2>
+    <nav class="prof-nav">
+      <div class="prof-grid">
+        <a href="#popup1"><img src="profilepic/profile_rui.JPG" alt="Rui"></a>
+        <a href="#popup2"><img src="profilepic/profile_ami.JPG" alt="Ami"></a>
+        <a href="#popup3"><img src="profilepic/profile_kana.JPG" alt="Kana"></a>
+        <a href="#popup4"><img src="profilepic/profile_natsumi.JPG" alt="Natsumi"></a>
+        <a href="#popup5"><img src="profilepic/profile_karen.JPG" alt="Karen"></a>
+        <a href="#popup6"><img src="profilepic/profile_chiho.JPG" alt="Chiho"></a>
+      </div>
+    </nav>
   </div>
 </div>
 
 <!-- ポップアップ用のHTML -->
 <div id="popup1" class="overlay">
-  <a href="#" class="close">×</a>
+  <a href="#" class="close">&times;</a>
   <img src="profilepic/profile_rui2.JPG" class="popup-content">
 </div>
 <div id="popup2" class="overlay">
-  <a href="#" class="close">×</a>
+  <a href="#" class="close">&times;</a>
   <img src="profilepic/profile_ami2.JPG" class="popup-content">
 </div>
 <div id="popup3" class="overlay">
-  <a href="#" class="close">×</a>
+  <a href="#" class="close">&times;</a>
   <img src="profilepic/profile_kana2.JPG" class="popup-content">
 </div>
 <div id="popup4" class="overlay">
-  <a href="#" class="close">×</a>
+  <a href="#" class="close">&times;</a>
   <img src="profilepic/profile_natsumi2.JPG" class="popup-content">
 </div>
 <div id="popup5" class="overlay">
-  <a href="#" class="close">×</a>
+  <a href="#" class="close">&times;</a>
   <img src="profilepic/profile_karen2.JPG" class="popup-content">
 </div>
 <div id="popup6" class="overlay">
-  <a href="#" class="close">×</a>
+  <a href="#" class="close">&times;</a>
   <img src="profilepic/profile_chiho2.JPG" class="popup-content">
 </div>
 
+
     <div class="footer">
       <div style="text-align:center">
-     <footer>
-      <p></p>
-     </footer>
+      <footer>
+        <div class="footer">
+        <div style="text-align:center">
+            <a href="index.html" class="anchor_link">
+                <img src="mainpic/LOVEME_logo.jpg" height="90" alt="ロゴ">
+            </a>
+        </div>
+        </div>
+        <nav class="sns-nav">
+                <ul>
+                    <li><a href="https://x.com/LOVEME_idol"><img src="mainpic/logo-black.png" height="30" alt="X"></a></li>
+                    <li><a href="#"><img src="mainpic/Instagram_Glyph_Black.png" height="30" alt="Instagram"></a></li>
+                    <li><a href="https://youtube.com/@loveme-sx4il?si=_6kouY-TEkoKa0Qe"><img src="mainpic/youtube_social_icon_dark.png" height="30" alt="youtube"></a></li>
+                </ul>
+        </nav>
+        <nav class="another-nav">
+                <ul>
+                    <li><a href="#" class="anchor_link">FAQ</a></li>
+                    <li><a href="# class="anchor_link">会員規約</a></li>
+                    <li><a href="#" class="anchor_link">プライバシーポリシー</a></li>
+                    <li><a href="#" class="anchor_link">特定商取引法</a></li>
+                </ul>
+        </nav>
+        <p class="copyright">&copy; Copyright LOVEME. All Rights Reserved</p>
+
+       </footer>
     </div>
   </body>
 </html>

@@ -1,33 +1,33 @@
-/* ログイン画面のCSS */
-/* ロゴ */
+/* SHOPのCSS */
+/* ヘッダー */
 .header img {
-    width: auto;  /* 幅を元のサイズに */
-    height: 90px; /* 高さを90pxに固定 */
+    width: auto;
+    height: 90px;
 }
 
 /* メニュー項目 */
 .main-nav ul {
   text-align: center;
   padding: 0;
-  list-style: none; /* liタグの箇条書きの点を消す */
+  list-style: none;
 }
 
 .main-nav li {
   display: inline-block;
   margin: 0 10px;
-  border-bottom: 10px solid transparent; /* 通常時の透明なボーダー ※文字が動くのを防ぐため */
+  border-bottom: 10px solid transparent;
 }
 
 .main-nav a {
-  text-decoration: none; /* リンクの下線を消す */
+  text-decoration: none;
   font-size: 16px;
   color: #333;
-  font-weight: bold; 
+  font-weight: bold;
   font-family: serif;
 }
 
 .main-nav li:hover { 
-  border-bottom: 3px solid #FF3399; /* ホバー時のボーダーの色を指定 */
+  border-bottom: 3px solid #FF3399;
 }
 
 /* ハンバーガーメニュー */
@@ -136,79 +136,81 @@
   visibility: visible;
 }
 
-/* タイトル */
-.sub_ttl {
-  color: #333;
-  font-weight: bold;
+
+/* SHOPのタイトル */
+.shop-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.shop-header h2 {
   font-size: 32px;
   font-family: serif;
-  text-align: center;
-  margin-bottom: 30px;
-}
-.login-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-}
-h1 {
   color: #333;
+}
+
+/* 商品一覧のグリッド */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* 商品カード */
+.product-card {
+  width: 200px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex; /* フレックスボックスを使って縦に並べる */
+  flex-direction: column; /* 要素を縦に並べる */
+  justify-content: space-between; /* 各要素を均等に配置 */
+  height: 350px; /* 高さを指定してスペースを確保 */
+}
+
+/* 商品名 */
+.product-card h3 {
+  margin: 0; /* 余計なマージンを削除 */
+  font-size: 18px;
+  font-family: serif;
+  flex-grow: 0; /* 必要に応じて調整 */
+}
+
+/* 商品紹介文 */
+.product-card p {
+  font-size: 14px;
+  color: #333;
+  flex-grow: 1; /* 残りのスペースを占める */
+  margin: 10px 0; /* 少しの余白を追加 */
+}
+
+/* 価格表示 */
+.product-card .price {
   font-weight: bold;
-  font-size: 25px;
-  font-family: serif;
-  text-align: center;
-  margin-bottom: 30px;
+  color: #FF3399;
+  margin-top: 10px;
 }
 
-h2 {
-  color: #333;
-  font-size: 20px;
-  text-align: center;
-  font-family: serif;
+/* カートに追加ボタン */
+.add-to-cart-btn {
+  background-color: #FF3399;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  flex-grow: 0; /* ボタンが押しつぶされないように */
 }
 
-.input-group {
-    margin-bottom: 15px;
-    text-align: center;
+.add-to-cart-btn:hover {
+  background-color: #e0246d;
 }
-
-.input-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.input-group input {
-    width: 80%;
-    padding: 10px; /* ボタンと同じ padding に調整 */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    align-items: center;;
-}
-
-button {
-    width: 100%; 
-    padding: 10px;
-    background-color: #ed3ba0;
-    color: white;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    align-items: center;;
-}
-
-button:hover {
-    background-color: #ed3ba0;
-}
-
-.error-message {
-    color: red;
-    text-align: center;
-    font-size: 14px;
-}
-
 
 .footer {
   margin-top: 100px; /* 上に50pxのスペースを作る */
@@ -236,7 +238,6 @@ button:hover {
 .sns-nav li:hover { 
   border-bottom: 3px solid #FF3399; /* ホバー時のボーダーの色を指定 */
 }
-
 /* 下部メニューたち */
 .another-nav ul {
   text-align: center;

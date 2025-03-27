@@ -3,30 +3,62 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LOVEME OFFICIAL SITE</title>
-    <link rel="stylesheet" href="./css/stylesheet.css">
-  </head>
+    <title>NEWS</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel = "shortcut icon" href="images/favicon.ico">
+    <style>
+  ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+     }
+    </style>
+</head>
   
-  <body>
-    <div class="header">
+<body>
+<!-- メニュー -->
+<div class="header">
     <div style="text-align:center">
-       <a href="index.html" class="anchor_link"><img src="LOVEME_logo.jpg" height="70" alt="ロゴ"></a>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="hamburger-menu">
-         <span></span>
-         <span></span>
-         <span></span>
-        </label>
-    <nav>
-      <ul>
-        <li><a href="news.html" class="anchor_link">NEWS</a></li>
-        <li><a href="profile.html" class="anchor_link">PROFILE</a></li>
-        <li><a href="#" class="anchor_link">DISCOGRAPHY</a></li>
-        <li><a href="#" class="anchor_link">SCHEDULE</a></li>
-        <li><a href="#" class="anchor_link">SHOP</a></li>
-      </ul>
+        <a href="index.html" class="anchor_link">
+            <img src="mainpic/LOVEME_logo.jpg" height="90" alt="ロゴ">
+        </a>
+
+<!-- チェックボックス（非表示） -->
+<input type="checkbox" id="menu-toggle">
+
+<!-- ハンバーガーメニューアイコン -->
+<label for="menu-toggle" class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+<!-- メニューと背景のオーバーレイ -->
+<div class="menu-overlay">
+    <nav class="menu-content">
+        <!-- ✕ボタン -->
+        <label for="menu-toggle" class="close-menu">✕</label>
+        <ul class="hum-nav">
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="profile.html">PROFILE</a></li>
+            <li><a href="#">DISCOGRAPHY</a></li>
+            <li><a href="#">SCHEDULE</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+        </ul>
     </nav>
-    </div>
+</div>
+
+        <!-- メニューバー -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="news.html" class="anchor_link">NEWS</a></li>
+                    <li><a href="profile.html" class="anchor_link">PROFILE</a></li>
+                    <li><a href="#" class="anchor_link">DISCOGRAPHY</a></li>
+                    <li><a href="#" class="anchor_link">SCHEDULE</a></li>
+                    <li><a href="shop.html" class="anchor_link">SHOP</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
 
     <div class="main">
@@ -80,9 +112,32 @@
 
     <div class="footer">
       <div style="text-align:center">
-     <footer>
-     <p></p> <!--フッターです-->
-     </footer>
+      <footer>
+        <div class="footer">
+        <div style="text-align:center">
+            <a href="index.html" class="anchor_link">
+                <img src="mainpic/LOVEME_logo.jpg" height="90" alt="ロゴ">
+            </a>
+        </div>
+        </div>
+        <nav class="sns-nav">
+                <ul>
+                    <li><a href="https://x.com/LOVEME_idol"><img src="mainpic/logo-black.png" height="30" alt="X"></a></li>
+                    <li><a href="#"><img src="mainpic/Instagram_Glyph_Black.png" height="30" alt="Instagram"></a></li>
+                    <li><a href="https://youtube.com/@loveme-sx4il?si=_6kouY-TEkoKa0Qe"><img src="mainpic/youtube_social_icon_dark.png" height="30" alt="youtube"></a></li>
+                </ul>
+        </nav>
+        <nav class="another-nav">
+                <ul>
+                    <li><a href="#" class="anchor_link">FAQ</a></li>
+                    <li><a href="# class="anchor_link">会員規約</a></li>
+                    <li><a href="#" class="anchor_link">プライバシーポリシー</a></li>
+                    <li><a href="#" class="anchor_link">特定商取引法</a></li>
+                </ul>
+        </nav>
+        <p class="copyright">&copy; Copyright LOVEME. All Rights Reserved</p>
+
+       </footer>
     </div>
   </body>
 </html>
