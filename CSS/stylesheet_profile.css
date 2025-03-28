@@ -30,7 +30,6 @@
   border-bottom: 3px solid #FF3399; /* ホバー時のボーダーの色を指定 */
 }
 
-
 /* ハンバーガーメニュー */
 .hamburger-menu {
   position: fixed;
@@ -194,11 +193,11 @@
 .close {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 70px;
   color: #fff;
   font-size: 30px;
   text-decoration: none;
-  z-index: 1001; /* 閉じるボタンが最前面 */
+  z-index: 12000; /* 閉じるボタンが最前面 */
 }
 
 .footer {
